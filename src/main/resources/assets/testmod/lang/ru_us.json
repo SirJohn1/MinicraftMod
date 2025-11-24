@@ -1,4 +1,6 @@
 {
   "item.testmod.steel": "Сталь",
-  "creativetab.testmod.mod_item":"Мод Предметы"
+  "creativetab.testmod.mod_item":"Мод Предметы",
+  "item.testmod.gun": "Пистолет",
+  "item.testmod.bullet": "Пуля"
 }

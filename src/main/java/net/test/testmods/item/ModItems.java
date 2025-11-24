@@ -13,8 +13,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> STEEL = ITEMS.register("steel",
             () -> new  Item(new Item.Properties().setId(ITEMS.key("steel"))));
-
-
+    public static final RegistryObject<Item> GUN = ITEMS.register("gun",
+            () -> new  Item(new Item.Properties().setId(ITEMS.key("gun"))));
+    public static final RegistryObject<Item> BULLET = ITEMS.register("bullet",
+            () -> new  Item(new Item.Properties().setId(ITEMS.key("bullet"))));
 
     public  static void register(BusGroup busGroup)
     {

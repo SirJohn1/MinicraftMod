@@ -19,7 +19,14 @@ public class ModCreativeModeTabs {
                     //.withTabsBefore(MOD_ITEMS.getId()) получает id указаной вкладки и она будет после указаной
                     .title(Component.translatable("creativetab.testmod.mod_item"))
                     .displayItems((itemDisplayParameters, output) -> { //метод дя вывода предметов
-                      output.accept(ModItems.STEEL.get());//вывод предметов на вкладку
+                        output.accept(ModItems.STEEL.get());//вывод предметов на вкладку
+                        output.accept(ModItems.GUN.get());
+                        output.accept(ModItems.BULLET.get());
+
+
+
+
+
                     }).build());
 
 
