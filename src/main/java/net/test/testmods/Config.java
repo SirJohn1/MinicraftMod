@@ -1,4 +1,4 @@
-package net.test.testmod;
+package net.test.testmods;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

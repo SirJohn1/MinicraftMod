@@ -1,11 +1,11 @@
-package net.test.testmod.item;
+package net.test.testmods.item;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.test.testmod.TestMod;
+import net.test.testmods.TestMod;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -18,7 +18,6 @@ public class ModItems {
 
     public  static void register(BusGroup busGroup)
     {
-
         ITEMS.register(busGroup);
     }
 
