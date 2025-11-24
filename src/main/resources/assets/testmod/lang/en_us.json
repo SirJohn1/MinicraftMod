@@ -1,3 +1,4 @@
 {
-  "item.testmod.steel": "Steel"
+  "item.testmod.steel": "Steel",
+  "creativetab.testmod.mod_item": "Mods Item"
 }
