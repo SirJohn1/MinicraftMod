@@ -1,0 +1,11 @@
+{
+  "item.itgrmod.steel": "Steel",
+  "creativetab.itgrmod.mod_item": "Mods Item",
+  "item.itgrmod.gun": "Gun",
+  "item.itgrmod.bullet": "Bullet",
+  "item.itgrmod.scurvy_potion": "Scurvy potion",
+  "effect.itgrmod.scurvy": "Scurvy",
+  "item.minecraft.potion.effect.scurvy_potion": "Зелье цинги",
+  "item.minecraft.splash_potion.effect.scurvy_potion": "Взрывное зелье цинги",
+  "item.minecraft.lingering_potion.effect.scurvy_potion": "Туманное зелье цинги"
+}

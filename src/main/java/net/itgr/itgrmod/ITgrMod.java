@@ -1,6 +1,11 @@
-package net.test.testmods;
+package net.itgr.itgrmod;
 
 import com.mojang.logging.LogUtils;
+import net.itgr.itgrmod.effect.ModEffects;
+import net.itgr.itgrmod.item.ModCreativeModeTabs;
+import net.itgr.itgrmod.item.ModItems;
+import net.itgr.itgrmod.potion.ModPotions;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
@@ -9,37 +14,43 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.test.testmods.item.ModCreativeModeTabs;
-import net.test.testmods.item.ModItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(TestMod.MOD_ID)
-public final class TestMod {
+@Mod(ITgrMod.MOD_ID)
+public final class ITgrMod {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "testmod";
+    public static final String MOD_ID = "itgrmod";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public TestMod(FMLJavaModLoadingContext context) {
+
+    public ITgrMod(FMLJavaModLoadingContext context) {
         var modBusGroup = context.getModBusGroup();
+
+        // Register the commonSetup method for modloading
         FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
 
         ModItems.register(modBusGroup);
+        ModEffects.register(modBusGroup);
+        ModPotions.register(modBusGroup);
         ModCreativeModeTabs.register(modBusGroup);
+        // Register the item to a creative tab
+        BuildCreativeModeTabContentsEvent.BUS.addListener(ITgrMod::addCreative);
 
-        BuildCreativeModeTabContentsEvent.BUS.addListener(TestMod::addCreative);
+        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 
-
+    // Add the example block item to the building blocks tab
     private static void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.SCURVYPOTION);
+        }
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

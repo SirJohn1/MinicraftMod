@@ -2,7 +2,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '[6.0.46,6.2)'
+    id 'net.minecraftforge.gradle' version '6.0.+'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
@@ -207,7 +207,7 @@ publishing {
     }
     repositories {
         maven {
-            url "file://${project.projectDir}/mcmodsrepo"
+            url  = "file://${project.projectDir}/mcmodsrepo"
         }
     }
 }
@@ -234,3 +234,5 @@ sourceSets.each {
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
 }
+
+
