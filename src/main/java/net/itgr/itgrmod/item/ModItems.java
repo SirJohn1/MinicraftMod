@@ -20,6 +20,15 @@ public class ModItems {
             () -> new  Item(new Item.Properties().setId(ITEMS.key("gun"))));
     public static final RegistryObject<Item> BULLET = ITEMS.register("bullet",
             () -> new  Item(new Item.Properties().setId(ITEMS.key("bullet"))));
+    public static final RegistryObject<Item> SABER = ITEMS.register("saber",
+            () -> new  Item(new Item.Properties().setId(ITEMS.key("saber"))));
+
+
+
+    //public static final RegistryObject<Item> STEEL_BLOCK = ITEMS.register("steel_block_item",
+    //        () -> new  Item(new Item.Properties().setId(ITEMS.key("steel_block_item"))));
+
+
 
     public  static void register(BusGroup busGroup)
     {

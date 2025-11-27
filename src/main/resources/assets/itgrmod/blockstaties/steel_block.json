@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "itgrmod:models/block/steel_block"
+    }
+  }
+}

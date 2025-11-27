@@ -1,6 +1,7 @@
 package net.itgr.itgrmod;
 
 import com.mojang.logging.LogUtils;
+import net.itgr.itgrmod.block.ModBlocks;
 import net.itgr.itgrmod.effect.ModEffects;
 import net.itgr.itgrmod.item.ModCreativeModeTabs;
 import net.itgr.itgrmod.item.ModItems;
@@ -31,10 +32,14 @@ public final class ITgrMod {
         // Register the commonSetup method for modloading
         FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
 
+
+        ModBlocks.register(modBusGroup);
         ModItems.register(modBusGroup);
         ModEffects.register(modBusGroup);
         ModPotions.register(modBusGroup);
         ModCreativeModeTabs.register(modBusGroup);
+
+
         // Register the item to a creative tab
         BuildCreativeModeTabContentsEvent.BUS.addListener(ITgrMod::addCreative);
 
@@ -48,9 +53,7 @@ public final class ITgrMod {
 
     // Add the example block item to the building blocks tab
     private static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.SCURVYPOTION);
-        }
+
     }
 
     //бэм
