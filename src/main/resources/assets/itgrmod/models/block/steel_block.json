@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "itgrmod:textures/block/steel_block"
+    "all": "itgrmod:block/steel_block"
   }
 }
