@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#":  "itgrmod:steel",
+    "X": "minecraft:gunpowder",
+    "I": "minecraft:stick",
+    "T": "minecraft:flint"
+  },
+  "pattern": [
+    "  T",
+    "#X#",
+    "  I"
+  ],
+  "result": {
+    "id": "itgrmod:gun"
+  }
+}
