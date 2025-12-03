@@ -22,7 +22,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> STEEL_BLOCK = registerBlock("steel_block",
             () -> new Block(BlockBehaviour.Properties.of().setId(BLOCKS.key("steel_block"))
-                    .strength(7f).requiresCorrectToolForDrops().sound(SoundType.IRON))
+                    .strength(5f).requiresCorrectToolForDrops())
     );
 
     //ручная регистрация блока как предмет
