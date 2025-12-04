@@ -1,0 +1,19 @@
+{
+
+  "structures": [
+    {
+      "structure": "structure_tutorial:code_structure_sea_boat",
+      "weight": 1
+    }
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+
+    "salt": 4367768776,
+
+    "spacing": 14,
+
+    "separation": 5
+  }
+}

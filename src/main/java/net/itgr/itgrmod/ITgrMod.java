@@ -16,10 +16,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ITgrMod.MOD_ID)
 public final class ITgrMod {
     // Define mod id in a common place for everything to reference
+
     public static final String MOD_ID = "itgrmod";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -40,6 +42,9 @@ public final class ITgrMod {
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        STStructures.DEFERRED_REGISTRY_STRUCTURE.register(modBusGroup);
+        STStructurePlacements.DEFERRED_REGISTRY_STRUCTURE_PLACEMENT_TYPE.register(modBusGroup);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

@@ -27,6 +27,9 @@ import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
+import net.minecraft.world.level.levelgen.structure.pools.alias.PoolAliasLookup;
+import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
+
 
 import java.util.List;
 import java.util.Map;
@@ -52,7 +55,7 @@ public class OceanStructures extends Structure {
                     .apply(codecBuilder, StructureSettings::new)
     );
 
-    // A custom codec that changes the size limit for our code_structure_sea_boat.json's config to not be capped at 7.
+    // A custom codec that changes the size limit for our ship.json's config to not be capped at 7.
     // With this, we can have a structure with a size limit up to 30 if we want to have extremely long branches of pieces in the structure.
     public static final Codec<OceanStructures> CODEC = RecordCodecBuilder.create(instance ->
             instance.group(CUSTOM_STRUCTURE_SETTINGS_CODEC.forGetter(structureInfo -> structureInfo.modifiableStructureInfo().getOriginalStructureInfo().structureSettings()),
@@ -86,6 +89,7 @@ public class OceanStructures extends Structure {
         this.startHeight = startHeight;
         this.projectStartToHeightmap = projectStartToHeightmap;
         this.maxDistanceFromCenter = maxDistanceFromCenter;
+
     }
 
     /*
@@ -155,17 +159,17 @@ public class OceanStructures extends Structure {
 
         Optional<GenerationStub> structurePiecesGenerator =
                 JigsawPlacement.addPieces(
-                        context, // Used for JigsawPlacement to get all the proper behaviors done.
-                        this.startPool, // The starting pool to use to create the structure layout from
-                        this.startJigsawName, // Can be used to only spawn from one Jigsaw block. But we don't need to worry about this.
-                        this.size, // How deep a branch of pieces can go away from center piece. (5 means branches cannot be longer than 5 pieces from center piece)
-                        blockPos, // Where to spawn the structure.
-                        false, // "useExpansionHack" This is for legacy villages to generate properly. You should keep this false always.
-                        this.projectStartToHeightmap, // Adds the terrain height's y value to the passed in blockpos's y value. (This uses WORLD_SURFACE_WG heightmap which stops at top water too)
-                        // Here at projectStartToHeightmap, start_height's y value is -1 which means the structure spawn -1 blocks below terrain height if start_height and project_start_to_heightmap is defined in structure JSON.
-                        // Set projectStartToHeightmap to be empty optional for structure to be place only at the passed in blockpos's Y value instead.
-                        // Definitely keep this an empty optional when placing structures in the nether as otherwise, heightmap placing will put the structure on the Bedrock roof.
-                        this.maxDistanceFromCenter); // Maximum limit for how far pieces can spawn from center. You cannot set this bigger than 128 or else pieces gets cutoff.
+                        context,
+                        this.startPool,
+                        this.startJigsawName,
+                        this.size,
+                        blockPos,
+                        false,
+                        this.projectStartToHeightmap,
+                        new JigsawStructure.MaxDistance(this.maxDistanceFromCenter),
+                        PoolAliasLookup.EMPTY,
+                        JigsawStructure.DEFAULT_DIMENSION_PADDING,
+                        JigsawStructure.DEFAULT_LIQUID_SETTINGS);
 
         /*
          * Note, you are always free to make your own JigsawPlacement class and implementation of how the structure

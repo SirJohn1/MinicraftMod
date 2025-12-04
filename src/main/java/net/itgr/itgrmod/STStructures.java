@@ -8,7 +8,7 @@ import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class STStructures {
+public class  STStructures {
 
     /**
      * We are using the Deferred Registry system to register our structure as this is the preferred way on Forge.
@@ -22,6 +22,7 @@ public class STStructures {
      */
 
     public static final RegistryObject<StructureType<OceanStructures>> OCEAN_STRUCTURES = DEFERRED_REGISTRY_STRUCTURE.register("ocean_structures", () -> explicitStructureTypeTyping(OceanStructures.CODEC));
+
 
 
     /**
