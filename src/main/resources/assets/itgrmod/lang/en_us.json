@@ -4,8 +4,11 @@
   "item.itgrmod.gun": "Gun",
   "item.itgrmod.bullet": "Bullet",
   "item.itgrmod.scurvy_potion": "Scurvy potion",
+  "item.itgrmod.saber": "Saber",
+  "item.itgrmod.steel_block": "Block of Steel",
+  "block.itgrmod.steel_block": "Block of Steel",
   "effect.itgrmod.scurvy": "Scurvy",
-  "item.minecraft.potion.effect.scurvy_potion": "Зелье цинги",
-  "item.minecraft.splash_potion.effect.scurvy_potion": "Взрывное зелье цинги",
-  "item.minecraft.lingering_potion.effect.scurvy_potion": "Туманное зелье цинги"
+  "item.minecraft.potion.effect.scurvy_potion": "Scurvy potion",
+  "item.minecraft.splash_potion.effect.scurvy_potion": "Splash scurvy potion",
+  "item.minecraft.lingering_potion.effect.scurvy_potion": "Lingering scurvy potion"
 }
