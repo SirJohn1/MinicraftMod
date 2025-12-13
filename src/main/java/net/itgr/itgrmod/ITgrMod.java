@@ -6,6 +6,8 @@ import net.itgr.itgrmod.item.ModCreativeModeTabs;
 import net.itgr.itgrmod.item.ModItems;
 import net.itgr.itgrmod.potion.ModPotions;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
@@ -15,6 +17,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
+import static net.minecraft.world.item.component.Consumables.defaultDrink;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -67,4 +71,7 @@ public final class ITgrMod {
 
         }
     }
+
+
+
 }

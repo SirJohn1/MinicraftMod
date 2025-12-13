@@ -16,7 +16,7 @@ public class ModPotions {
 
     public static final RegistryObject<Potion> SCURVY_POTION =
             POTIONS.register("scurvy_potion", () -> new Potion("scurvy_potion",
-                    new MobEffectInstance(ModEffects.SCURVY_EFFECT.getHolder().orElseThrow(), 200, 0)));
+                    new MobEffectInstance(ModEffects.SCURVY_EFFECT.getHolder().orElseThrow(), 1000, 0)));
 
     public  static void register(BusGroup busGroup){
         POTIONS.register(busGroup);

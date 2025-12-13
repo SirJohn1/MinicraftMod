@@ -1,11 +1,16 @@
 package net.itgr.itgrmod.item;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.itgr.itgrmod.ITgrMod;
+
+import static net.minecraft.world.item.component.Consumables.defaultDrink;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -20,6 +25,8 @@ public class ModItems {
             () -> new  Item(new Item.Properties().setId(ITEMS.key("gun"))));
     public static final RegistryObject<Item> BULLET = ITEMS.register("bullet",
             () -> new  Item(new Item.Properties().setId(ITEMS.key("bullet"))));
+
+    //public static final Consumable GLOW_BERRIES = defaultDrink().onConsume(ClearAllStatusEffectsConsumeEffect.INSTANCE).build();
 
     public  static void register(BusGroup busGroup)
     {
