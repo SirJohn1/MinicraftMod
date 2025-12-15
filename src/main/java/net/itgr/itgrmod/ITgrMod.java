@@ -48,8 +48,6 @@ public final class ITgrMod {
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
-        //STStructures.DEFERRED_REGISTRY_STRUCTURE.register(modBusGroup);
-        //STStructurePlacements.DEFERRED_REGISTRY_STRUCTURE_PLACEMENT_TYPE.register(modBusGroup);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

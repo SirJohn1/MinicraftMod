@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "itgrmod:block/map"
+    },
+    "facing=south": {
+      "model": "itgrmod:block/map",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "itgrmod:block/map",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "itgrmod:block/map",
+      "y": 270
+    }
+  }
+}

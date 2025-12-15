@@ -1,13 +1,20 @@
 {
-  "item.itgrmod.steel": "Сталь",
   "creativetab.itgrmod.mod_item":"Мод Предметы",
+
+  "item.itgrmod.steel": "Сталь",
   "item.itgrmod.gun": "Пистолет",
   "item.itgrmod.bullet": "Пуля",
   "item.itgrmod.saber": "Сабля",
   "item.itgrmod.steel_block": "Стальной блок",
-  "block.itgrmod.steel_block": "Стальной блок",
   "item.itgrmod.scurvy_potion": "Зелье цинги",
+  "item.itgrmod.map": "Пиратский стол",
+
+  "block.itgrmod.steel_block": "Стальной блок",
+
+  "block.itgrmod.chair": "Стул",
+
   "effect.itgrmod.scurvy": "Цинга",
+
   "item.minecraft.potion.effect.scurvy_potion": "Зелье цинги",
   "item.minecraft.splash_potion.effect.scurvy_potion": "Взрывное зелье цинги",
   "item.minecraft.lingering_potion.effect.scurvy_potion": "Туманное зелье цинги"
