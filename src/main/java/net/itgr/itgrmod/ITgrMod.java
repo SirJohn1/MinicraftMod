@@ -6,6 +6,7 @@ import net.itgr.itgrmod.effect.ModEffects;
 import net.itgr.itgrmod.item.ModCreativeModeTabs;
 import net.itgr.itgrmod.item.ModItems;
 import net.itgr.itgrmod.potion.ModPotions;
+import net.itgr.itgrmod.villager.ModVillagers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -40,7 +41,7 @@ public final class ITgrMod {
         ModEffects.register(modBusGroup);
         ModPotions.register(modBusGroup);
         ModCreativeModeTabs.register(modBusGroup);
-
+        ModVillagers.register(modBusGroup);
 
         // Register the item to a creative tab
         BuildCreativeModeTabContentsEvent.BUS.addListener(ITgrMod::addCreative);
