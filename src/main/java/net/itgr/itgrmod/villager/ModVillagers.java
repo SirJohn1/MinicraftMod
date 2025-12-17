@@ -1,5 +1,6 @@
 package net.itgr.itgrmod.villager;
-
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.Holder;
 import com.google.common.collect.ImmutableSet;
 import net.itgr.itgrmod.ITgrMod;
 import net.itgr.itgrmod.block.ModBlocks;
@@ -21,10 +22,16 @@ public class ModVillagers {
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.MAP.get().getStateDefinition().getPossibleStates()),
                     1, 1));
 
-    public static final RegistryObject<VillagerProfession> ITGR = VILLAGER_PROFESSIONS.register("itgr",
-            () -> new VillagerProfession("itgr", holder -> holder.value() == ITGR_POI.get(),
-                    holder -> holder.value() == ITGR_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
-                    SoundEvents.VILLAGER_WORK_CARTOGRAPHER.get()));
+    public static final RegistryObject<VillagerProfession> ITGR =
+            VILLAGER_PROFESSIONS.register("itgr",
+                    () -> new VillagerProfession(
+                            Component.translatable("entity.itgrmod.villager.itgr"), // ✅ Component
+                            holder -> holder.value() == ITGR_POI.get(),
+                            holder -> holder.value() == ITGR_POI.get(),
+                            ImmutableSet.of(),
+                            ImmutableSet.of(),
+                            SoundEvents.VILLAGER_WORK_CARTOGRAPHER // ✅ БЕЗ .value()
+                    ));
 
     public static void register(BusGroup busGroup) {
         POI_TYPES.register(busGroup);
