@@ -59,7 +59,7 @@ minecraft {
     runs {
         // applies to all the run configs below
         configureEach {
-            workingDirectory project.file('run')
+            workingDirectory = file('run')
 
             // Optional additional logging. The markers can be added/remove as needed, separated by commas.
             // "SCAN": For mods scan.
@@ -94,7 +94,7 @@ minecraft {
 
         data {
             // example of overriding the workingDirectory set in configureEach above
-            workingDirectory project.file('run-data')
+            workingDirectory = file('run-data')
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
@@ -179,19 +179,21 @@ tasks.named('processResources', ProcessResources) {
     inputs.properties replaceProperties
 
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
-        expand replaceProperties + [project: project]
+        expand replaceProperties
     }
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
-tasks.named('jar', Jar) {
+def jarArchiveName = base.archivesName.get()
+def jarVersion = version
+tasks.named('jar', Jar).configure {
     manifest {
         attributes([
             'Specification-Title'     : mod_id,
             'Specification-Vendor'    : mod_authors,
             'Specification-Version'   : '1', // We are version 1 of ourselves
-            'Implementation-Title'    : project.name,
-            'Implementation-Version'  : project.jar.archiveVersion,
+            'Implementation-Title'    : jarArchiveName,
+            'Implementation-Version'  : jarVersion,
             'Implementation-Vendor'   : mod_authors
         ])
 //        attributes['MixinConfigs'] = "${mod_id}.mixins.json"
@@ -207,7 +209,7 @@ publishing {
     }
     repositories {
         maven {
-            url  = "file://${project.projectDir}/mcmodsrepo"
+            url  = layout.projectDirectory.dir("mcmodsrepo").asFile.toURI()
         }
     }
 }
@@ -233,6 +235,18 @@ sourceSets.each {
     def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
+}
+
+// Configure ForgeGradle tasks to avoid Task.project deprecation warnings
+// These tasks are created by ForgeGradle plugin internally, so we can only configure what's exposed
+afterEvaluate {
+    // Try to configure tasks that might use project during execution
+    // Note: Some tasks are created internally by ForgeGradle and may still show warnings
+    tasks.matching { it.name in ['downloadMcpConfig', 'makeSrcDirs', 'extractSrg', 'createSrgToMcp'] }.configureEach {
+        // These tasks are configured by ForgeGradle internally
+        // We can't fully prevent the warnings as they come from within the plugin
+        // But we ensure our own configuration doesn't add to the problem
+    }
 }
 
 

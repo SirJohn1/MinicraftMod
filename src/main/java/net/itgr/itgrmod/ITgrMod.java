@@ -1,10 +1,12 @@
 package net.itgr.itgrmod;
 
 import com.mojang.logging.LogUtils;
+import net.itgr.itgrmod.block.ModBlocks;
 import net.itgr.itgrmod.effect.ModEffects;
 import net.itgr.itgrmod.item.ModCreativeModeTabs;
 import net.itgr.itgrmod.item.ModItems;
 import net.itgr.itgrmod.potion.ModPotions;
+import net.itgr.itgrmod.villager.ModVillagers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -16,10 +18,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ITgrMod.MOD_ID)
 public final class ITgrMod {
     // Define mod id in a common place for everything to reference
+
     public static final String MOD_ID = "itgrmod";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -31,15 +35,20 @@ public final class ITgrMod {
         // Register the commonSetup method for modloading
         FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
 
+
+        ModBlocks.register(modBusGroup);
         ModItems.register(modBusGroup);
         ModEffects.register(modBusGroup);
         ModPotions.register(modBusGroup);
         ModCreativeModeTabs.register(modBusGroup);
+        ModVillagers.register(modBusGroup);
+
         // Register the item to a creative tab
         BuildCreativeModeTabContentsEvent.BUS.addListener(ITgrMod::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -48,9 +57,7 @@ public final class ITgrMod {
 
     // Add the example block item to the building blocks tab
     private static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.SCURVYPOTION);
-        }
+
     }
 
     //бэм

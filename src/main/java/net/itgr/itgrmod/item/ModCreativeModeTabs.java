@@ -1,6 +1,7 @@
 package net.itgr.itgrmod.item;
 
 import net.itgr.itgrmod.ITgrMod;
+import net.itgr.itgrmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,6 +24,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GUN.get());
                         output.accept(ModItems.BULLET.get());
                         output.accept(ModItems.SCURVYPOTION.get());
+                        output.accept(ModItems.SABER.get());
+                        output.accept(ModBlocks.STEEL_BLOCK.get());
+                        output.accept(ModBlocks.MAP.get());
 
 }).build());
 

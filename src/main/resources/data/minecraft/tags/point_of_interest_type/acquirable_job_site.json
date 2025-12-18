@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "itgrmod:itgr_poi",
+      "required": false
+    }
+  ]
+}
