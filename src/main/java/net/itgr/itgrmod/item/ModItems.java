@@ -1,5 +1,9 @@
 package net.itgr.itgrmod.item;
 
+
+
+import net.minecraft.world.item.ArrowItem;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,12 +18,17 @@ public class ModItems {
     public static final RegistryObject<Item> SCURVYPOTION = ITEMS.register("scurvypotion",
             () -> new  Item(new Item.Properties().setId(ITEMS.key("scurvypotion"))));
 
+
     public static final RegistryObject<Item> STEEL = ITEMS.register("steel",
             () -> new  Item(new Item.Properties().setId(ITEMS.key("steel"))));
+
     public static final RegistryObject<Item> GUN = ITEMS.register("gun",
-            () -> new  Item(new Item.Properties().setId(ITEMS.key("gun"))));
+            () -> new BowItem(new Item.Properties().durability(500).setId(ITEMS.key("gun"))));
+
     public static final RegistryObject<Item> BULLET = ITEMS.register("bullet",
-            () -> new  Item(new Item.Properties().setId(ITEMS.key("bullet"))));
+            () -> new ArrowItem(new Item.Properties().setId(ITEMS.key("bullet"))));
+
+
     public static final RegistryObject<Item> SABER = ITEMS.register("saber",
             () -> new  Item(new Item.Properties().setId(ITEMS.key("saber"))));
 
