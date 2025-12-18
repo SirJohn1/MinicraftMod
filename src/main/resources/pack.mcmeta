@@ -1,7 +1,8 @@
 {
-  "pack": {
-    "description": "${mod_id} resources",
-    "max_format": 88,
-    "min_format": 88
-  }
+    "pack": {
+        "description": "StructureTutorialMod resources",
+        "pack_format": 26,
+        "_comment": "Happy modding!",
+        "supported_formats": [0, 1000000]
+    }
 }

@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "itgrmod_structure:ship",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 774356299,
+    "frequency": 0.5,
+    "spacing": 40,
+    "separation": 16,
+    "frequency_reduction_method": "legacy_type_1"
+  }
+}
