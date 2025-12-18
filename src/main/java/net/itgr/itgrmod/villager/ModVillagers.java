@@ -25,12 +25,12 @@ public class ModVillagers {
     public static final RegistryObject<VillagerProfession> ITGR =
             VILLAGER_PROFESSIONS.register("itgr",
                     () -> new VillagerProfession(
-                            Component.translatable("entity.itgrmod.villager.itgr"), // ✅ Component
+                            Component.translatable("entity.itgrmod.villager.itgr"),
                             holder -> holder.value() == ITGR_POI.get(),
                             holder -> holder.value() == ITGR_POI.get(),
                             ImmutableSet.of(),
                             ImmutableSet.of(),
-                            SoundEvents.VILLAGER_WORK_CARTOGRAPHER // ✅ БЕЗ .value()
+                            SoundEvents.VILLAGER_WORK_CARTOGRAPHER
                     ));
 
     public static void register(BusGroup busGroup) {
