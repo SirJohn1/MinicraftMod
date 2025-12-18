@@ -39,11 +39,11 @@ public class ModEvents {
 
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 3),
-                    new ItemStack(ModItems.BULLET.get(), 1),6,4,0.05f));
+                    new ItemStack(ModItems.BULLET.get(), 6),6,4,0.05f));
 
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemCost(Items.DIAMOND, 1),
-                    new ItemStack(ModItems.BULLET.get(), 5),6,4,0.05f));
+                    new ItemStack(ModItems.BULLET.get(), 18),6,4,0.05f));
 
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 18),
@@ -56,13 +56,13 @@ public class ModEvents {
 
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
-                    new ItemStack(ModItems.BULLET.get(), 1),6,4,0.05f));
+                    new ItemStack(ModItems.BULLET.get(), 2),6,4,0.05f));
 
 
 
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemCost(Items.DIAMOND, 1),
-                    new ItemStack(ModItems.BULLET.get(), 12),6,4,0.05f));
+                    new ItemStack(ModItems.BULLET.get(), 32),6,4,0.05f));
 
 
 
