@@ -2,8 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#":  "itgrmod:steel",
-    "X": "minecraft:iron_ingot"
+    "#":  "itgrmod:steel"
   },
   "pattern": [
     "###",
