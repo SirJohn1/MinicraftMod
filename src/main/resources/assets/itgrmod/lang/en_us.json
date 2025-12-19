@@ -8,11 +8,16 @@
   "item.itgrmod.steel_block": "Block of Steel",
   "item.itgrmod.map": "Pirate table",
 
+
   "block.itgrmod.steel_block": "Block of Steel",
   "block.itgrmod.chair": "Chair",
   "effect.itgrmod.scurvy": "Scurvy",
   "item.minecraft.potion.effect.scurvy_potion": "Scurvy potion",
   "item.minecraft.splash_potion.effect.scurvy_potion": "Splash scurvy potion",
   "item.minecraft.lingering_potion.effect.scurvy_potion": "Lingering scurvy potion",
-  "entity.minecraft.villager.itgrmod.itgr": "ITgr"
+  "entity.minecraft.villager.itgrmod.itgr": "ITgr",
+
+
+  "painting.itgrmod.pirate.title": "Pirate",
+  "painting.itgrmod.pirate.author": "ITgr"
 }
