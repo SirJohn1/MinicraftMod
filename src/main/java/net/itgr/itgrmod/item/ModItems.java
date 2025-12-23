@@ -18,6 +18,9 @@ public class ModItems {
     public static final RegistryObject<Item> SCURVYPOTION = ITEMS.register("scurvypotion",
             () -> new  Item(new Item.Properties().setId(ITEMS.key("scurvypotion"))));
 
+    public static final RegistryObject<Item> LEMON = ITEMS.register("lemon",
+            () -> new  Item(new Item.Properties().food(ModFood.LEMON).setId(ITEMS.key("lemon"))));
+
 
     public static final RegistryObject<Item> STEEL = ITEMS.register("steel",
             () -> new  Item(new Item.Properties().setId(ITEMS.key("steel"))));

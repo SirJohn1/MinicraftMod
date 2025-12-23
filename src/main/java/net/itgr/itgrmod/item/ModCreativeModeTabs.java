@@ -27,6 +27,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SABER.get());
                         output.accept(ModBlocks.STEEL_BLOCK.get());
                         output.accept(ModBlocks.MAP.get());
+                        output.accept(ModItems.LEMON.get());
 
 }).build());
 
