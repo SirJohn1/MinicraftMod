@@ -6,6 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -29,6 +30,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MAP.get());
                         output.accept(ModItems.LEMON.get());
 
+                        output.accept(Items.PAINTING);
 }).build());
 
 
