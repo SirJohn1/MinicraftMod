@@ -51,6 +51,14 @@ public class ModEvents {
 
         }
 
+        if(event.getType() == VillagerProfession.FARMER){
+            var trades = event.getTrades();
+
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 7),
+                    new ItemStack(ModItems.LEMON.get(), 1),6,4,0.05f));
+        }
+
         if(event.getType().equals(ModVillagers.ITGR.getKey())){
             var trades = event.getTrades();
 
